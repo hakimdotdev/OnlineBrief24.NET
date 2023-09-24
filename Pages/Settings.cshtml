@@ -1,0 +1,52 @@
+﻿@page
+@model OnlineBrief24.Pages.SettingsModel
+@{
+}
+<div class="modal-dialog" role="document">
+	<div class="modal-content rounded-5 shadow">
+		<div class="modal-header p-5 pb-4 border-bottom-0">
+			<h2 class="fw-bold mb-0">Einstellungen</h2>
+		</div>
+
+		<div class="modal-body p-5 pt-0">
+			<form>
+				<label for="Host">Host-Adresse</label>
+				<div class="input-group mb-3">
+
+					<input type="text" class="form-control" id="Host" placeholder="api.onlinebrief24.de" aria-label="Host" aria-describedby="basic-addon1">
+				</div>
+
+
+				<label for="basic-url">Upload-Pfad</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon3">api.onlinebrief24.de</span>
+					</div>
+					<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+				</div>
+				<label for="email">E-Mail-Adresse</label>
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" id="inputMail" placeholder="maxmuster@domain.tld">
+				</div>
+
+				<label for="password">Passwort</label>
+				<div class="input-group mb-3">
+					<input type="password" class="form-control" id="inputPassword" placeholder="s1ch€re$P4ssW0rt!23">
+				</div>
+				<div class="input-group mb-3">
+					<input class="btn btn-primary" type="submit" value="Verbindung Testen">
+
+				</div>
+				<div class="btn-group">
+					<input class="btn btn-success" type="submit" style="width:50%" value="Speichern">
+
+				</div>
+				<div class="btn-group">
+					<input class="btn btn-danger" type="reset" style="width:50%" value="Zurücksetzen">
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

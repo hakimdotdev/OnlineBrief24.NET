@@ -1,0 +1,39 @@
+﻿@page
+@model OnlineBrief24.Pages.HistoryModel
+@{
+}
+
+<div class="modal-dialog" role="grid">
+	<div class="modal-content rounded-5 shadow">
+		<div class="modal-header p-5 pb-4 border-bottom-0">
+			<h2 class="fw-bold mb-0">Upload-Historie</h2>
+		</div>
+
+		<div class="modal-body p-5 pt-0">
+			<table id="example" class="table table-striped" style="width:100%">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Kostenstelle</th>
+						<th>Dateiname</th>
+						<th>Uploadzeitpunkt</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var d in Model._dispatches)
+					{
+						@foreach (var f in d.Files)
+						{
+							<tr>
+								<td>@f.Name</td>
+								<td>@d.Account</td>
+								<td>@f.FileName</td>
+								<td>@d.StartDate</td>
+							</tr>
+						}
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
