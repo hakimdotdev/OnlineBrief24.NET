@@ -2,8 +2,8 @@
 
 .NET Application with Docker support as a UI for OnlineBrief24.
 
-## Still in progress!
-
+## !Still in progress!
+## !Auth currently permits any mail starting with admin, remove for anything but development!
 ## Notes 
 
 - Upload documents via SFTP
