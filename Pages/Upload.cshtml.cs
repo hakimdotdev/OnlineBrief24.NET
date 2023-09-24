@@ -112,7 +112,8 @@ namespace OnlineBrief24.Pages
 
 				}
 				_logger.LogInformation("[{dt}] Starting upload.", DateTime.Now);
-				Sftp sftp = new("abc@def.ghj", "MYSECUREPASSXD", false);
+				//TODO: CREDS
+				Sftp sftp = new("abc@def.ghj", "MYSECUREPASSXD");
 				try
 				{
 					await sftp.Upload(Upload);

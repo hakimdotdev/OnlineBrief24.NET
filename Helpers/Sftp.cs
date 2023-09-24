@@ -15,7 +15,7 @@ namespace OnlineBrief24.Helpers
 		private SshClient _sshClient;
 		private SftpClient _sftpClient;
 		private bool _verify = false;
-		public Sftp(string user, string password, bool verify)
+		public Sftp(string user, string password)
 		{
 			var envHost = System.Environment.GetEnvironmentVariable("SFTPHOST");
 			var envUser = System.Environment.GetEnvironmentVariable("SFTPUSER");
@@ -25,13 +25,13 @@ namespace OnlineBrief24.Helpers
 			var envVerifyThumbprint = System.Environment.GetEnvironmentVariable("VERIFYTHUMBPRINT");
 			_host = !Helpers.Environment.InDocker ? _host : envHost;
 			_user = Helpers.Environment.InDocker ? envUser.ToLower() : user.ToLower();
-			_password = Helpers.Environment.InDocker ? envPassword : user;
+			_password = Helpers.Environment.InDocker ? envPassword : password;
 			_uploadPath = !Helpers.Environment.InDocker && String.IsNullOrWhiteSpace(envUploadPath) ? _uploadPath : envUploadPath;
 			_thumbprint = !Helpers.Environment.InDocker && String.IsNullOrWhiteSpace(envThumbprint) ? _thumbprint : envThumbprint;
 			_verify =  String.Equals(envVerifyThumbprint == "True", StringComparison.OrdinalIgnoreCase) ? true : false;
 		}
 		
-		private async Task<bool> Connect()
+		public async Task<bool> Connect()
 		{
 			if (_verify)
 			{
