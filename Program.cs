@@ -19,7 +19,7 @@ var host = Environment.GetEnvironmentVariable("DB_HOST");
 var user = Environment.GetEnvironmentVariable("DB_USER");
 var pw = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
-builder.Services.AddDbContextPool<OnlineBrief24Context>(o => o.UseSqlServer($"Data Source = (localdb)\\MSSQLLocalDB; Database=OnlineBrief24;Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate=False; Application Intent = ReadWrite; Multi Subnet Failover=False\r\n" ?? throw new InvalidOperationException("Invalid ConnectionString"))
+builder.Services.AddDbContextPool<OnlineBrief24Context>(o => o.UseSqlServer($"Data Source = {host}; Database={db};Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate=False; Application Intent = ReadWrite; Multi Subnet Failover=False\r\n" ?? throw new InvalidOperationException("Invalid ConnectionString"))
 													  .EnableDetailedErrors()
 													  .EnableThreadSafetyChecks()
 													  .LogTo(Console.WriteLine));
